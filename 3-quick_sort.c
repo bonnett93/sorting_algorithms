@@ -49,7 +49,7 @@ void my_quick(int *array, int low, int high, size_t size)
  */
 int partition(int array[], int low, int high, size_t size)
 {
-	int pivot = array[high], change = 0;
+	int pivot = array[high];
 	int idx = low, i = low;
 
 	for (; i < high; i++)
@@ -58,7 +58,6 @@ int partition(int array[], int low, int high, size_t size)
 		{
 			swap(array, idx, i, size);
 			idx++;
-			change = 1;
 		}
 	}
 	swap(array, idx, high, size);
