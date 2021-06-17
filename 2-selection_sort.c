@@ -11,25 +11,29 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int a, change;
-	size_t i, j;
+	int a, pivote;
+	size_t i, j, pos;
 
 	if (array == NULL || size < 2)
 		return;
 	for (i = 0; i < size; i++)
 	{
-		change = 0;
+		pivote = array[i];
+		pos = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if (array[i] > array[j])
+			if (pivote > array[j])
 			{
-				a = array[i];
-				array[i] = array[j];
-				array[j] = a;
-				change = 1;
+				pivote = array[j];
+				pos = j;
 			}
 		}
-		if (change == 1)
+		if (pos != i)
+		{
+			a = array[i];
+			array[i] = array[pos];
+			array[pos] = a;
 			print_array(array, size);
+		}
 	}
 }
