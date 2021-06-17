@@ -2,7 +2,7 @@
 #define SORT_H
 
 #include <stdlib.h>
-
+#include <stdio.h>
 /* -Structures- */
 
 /**
@@ -33,5 +33,11 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 
 void quick_sort(int *array, size_t size);
+
+void swap(int *array, int i, int j, size_t size);
+
+int partition(int array[], int low, int high, size_t size);
+
+void my_quick(int *array, int low, int high, size_t size);
 
 #endif
