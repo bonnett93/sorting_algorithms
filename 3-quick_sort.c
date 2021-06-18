@@ -29,8 +29,8 @@ void quick_sort(int *array, size_t size)
 void my_quick(int *array, int low, int high, size_t size)
 {
 	int half_id;
-
-	if (low < high - 1)
+	/*printf("low: %d high: %d\n", low, high);*/
+	if (low < high)
 	{
 		half_id = partition(array, low, high, size);
 		my_quick(array, low, half_id - 1, size);
